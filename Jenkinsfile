@@ -1,6 +1,11 @@
 pipeline {
     agent any
-
+    
+    tools {
+        nodejs 'node-10'
+    }
+ 
+    
     stages {
         stage('Check if a commit by cicd pipeline') {
                 steps {
@@ -9,10 +14,14 @@ pipeline {
         }
         stage("Increase version") {
             steps {
-                sh 'npm version patch'
-                def scriptGetVersion = sh(script: 'bash getVersionPatch.sh api/package.json', returnStdout: true).trim()
-                env.VERSION = scriptGetVersion
-                echo "Increased Version: $VERSION"
+                sh 'npm --prefix ./api version patch'
+                script {
+                    sh 'pwd'
+                    sh 'ls -la'
+                    def scriptGetVersion = sh(script: 'bash getVersionPatch.sh api/package.json', returnStdout: true).trim()
+                    env.VERSION = scriptGetVersion
+                    echo "Increased Version: $VERSION"
+                }
             }
         }
         stage('Build') {
@@ -61,9 +70,11 @@ pipeline {
         }
         stage('Push version file to github') {
             steps {
-                def crendentialName = 'github-crendential'
+                script {
+                    def crendentialName = 'github-crendential'
                 def scriptPushVersionFile = load 'pushVersionFile.groovy'
-                scriptPushVersionFile(env.VERSION, crendentialName)
+                    scriptPushVersionFile(env.VERSION, crendentialName)
+                }
             }
         }
     }
