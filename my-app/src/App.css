@@ -1,4 +1,5 @@
 .header {
+  display: flex;
   width: 100%;
   padding: 2%;
   background-color: rgb(19, 11, 61);
@@ -31,8 +32,8 @@
 }
 
 .header-logo {
-  width: 50px;  /* Điều chỉnh kích thước phù hợp */
-  height: 50px; /* Điều chỉnh kích thước phù hợp */
+  width: 100px;  /* Điều chỉnh kích thước phù hợp */
+  height: 100px; /* Điều chỉnh kích thước phù hợp */
   object-fit: cover; /* Đảm bảo ảnh vừa vặn và không bị méo */
   border-radius: 10px; /* Bo tròn 10px */
   border-width: 2px;
