@@ -11,7 +11,7 @@ def pushVersionFile(String version, String crendentialName) {
         sh 'git branch '
         sh 'git config --list'
 
-        sh 'git remote set-url origin git@github.com:NATNgoc/react-nodejs-example.git'
+        sh "git remote set-url origin https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/react-nodejs-example.git"
         sh 'git add .'
         sh 'git commit -m "[ci skip] Update version to $VERSION"'
         sh 'git push origin HEAD:master'
