@@ -9,7 +9,7 @@
 
 .display-board {
   width: 100%;
-  background-color: rgb(255, 200, 220); /* Adjusted to a valid RGB color */
+  background-color: rgb(102, 25, 53); /* Adjusted to a valid RGB color */
   padding: 5%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow */
