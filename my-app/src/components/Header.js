@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-export const Header = () => {
-    return(
-        <div className="header">
-            <h1>React With NodeJS</h1>
-        </div>
-    )
+function Header() {
+  return (
+    <header className="header">
+      <img src="/path/to/your/logo.png" alt="Logo" className="header-logo" />
+      <h1>My React App</h1>
+    </header>
+  );
 }
+
+export default Header;
