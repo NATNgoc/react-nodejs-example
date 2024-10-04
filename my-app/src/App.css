@@ -2,14 +2,14 @@
 .header {
   width: 100%;
   padding: 2%;
-  background-color: burlywood;
-  color: white;
+  background-color: rgb(19, 11, 61);
+  color: rgb(255, 255, 253);
   text-align: center;
 }
 
 .display-board {
   width: 100%;
-  background-color: rgb(102, 25, 53); /* Adjusted to a valid RGB color */
+  background-color: rgb(234, 106, 153); /* Adjusted to a valid RGB color */
   padding: 5%;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adding shadow */
