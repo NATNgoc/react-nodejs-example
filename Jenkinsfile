@@ -18,6 +18,7 @@ pipeline {
                 script {
                     sh 'pwd'
                     sh 'ls -la'
+                    sh 'cat api/package.json'
                     def scriptGetVersion = sh(script: 'bash getVersionPatch.sh api/package.json', returnStdout: true).trim()
                     env.VERSION = scriptGetVersion
                     echo "Increased Version: $VERSION"
@@ -71,9 +72,9 @@ pipeline {
         stage('Push version file to github') {
             steps {
                 script {
-                    def crendentialName = 'github-crendential'
-                def scriptPushVersionFile = load 'pushVersionFile.groovy'
-                    scriptPushVersionFile(env.VERSION, crendentialName)
+                    def crendentialName = 'Jenkins'
+                    def scriptPushVersionFile = load 'pushVersionFile.groovy'
+                    scriptPushVersionFile.pushVersionFile(env.VERSION, crendentialName) 
                 }
             }
         }
