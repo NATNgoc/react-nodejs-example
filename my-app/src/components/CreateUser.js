@@ -8,7 +8,7 @@ const CreateUser = ({onChangeForm, createUser }) => {
         <div className="container">
             <div className="row">
                 <div className="col-md-7 mrgnbtm">
-                <h2>Create User</h2>
+                <h2>Create User 🤷‍♀️</h2>
                 <form>
                     <div className="row">
                         <div className="form-group col-md-6">
